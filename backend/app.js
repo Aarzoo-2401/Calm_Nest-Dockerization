@@ -19,6 +19,13 @@ app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "../Frontend/WelcomePage/index.html"));
 });
 
+app.get('/api/student', (req, res) => {
+  res.json({
+    name: "Aarzoo",
+    studentId: "s225095435"
+  });
+});
+
 const PORT = process.env.PORT || 3000;
 if (process.env.NODE_ENV !== "test") {
     app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
